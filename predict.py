@@ -96,12 +96,8 @@ def load_model_with_weights(model_path, image_size=(350, 350)):
         Dense(OUTPUT_SIZE, activation='softmax')
     ])
     
-    # Compile the model
-    model.compile(
-        optimizer='adam', 
-        loss='categorical_crossentropy', 
-        metrics=['accuracy']
-    )
+    # Do NOT compile the model for inference (saves memory)
+    # model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
     
     print(f"Loading weights from '{model_path}'...")
     
