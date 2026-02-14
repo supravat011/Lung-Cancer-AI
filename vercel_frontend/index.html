@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Cancer Prediction AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="logo-area">
+                <i class="fa-solid fa-lungs-virus"></i>
+                <h1>LungScan AI</h1>
+            </div>
+            <p class="subtitle">Advanced Deep Learning for Early Cancer Detection</p>
+        </header>
+
+        <main class="content-area">
+            <div class="card upload-card">
+                <div class="upload-area" id="upload-area">
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                    <div class="upload-content">
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                        <h3>Upload CT Scan Image</h3>
+                        <p>Drag & drop or <span class="browse-btn">browse</span></p>
+                    </div>
+                </div>
+
+                <div class="image-preview" id="image-preview">
+                    <img id="preview-img" src="" alt="Preview">
+                    <button class="remove-btn" id="remove-btn"><i class="fa-solid fa-times"></i></button>
+                </div>
+
+                <button id="predict-btn" class="primary-btn" disabled>
+                    <span class="btn-text">Analyze Scan</span>
+                    <span class="loader hidden"></span>
+                </button>
+            </div>
+
+            <div class="card result-card hidden" id="result-card">
+                <div class="result-header">
+                    <h2>Analysis Result</h2>
+                    <span class="badge" id="confidence-badge">98% Confidence</span>
+                </div>
+
+                <div class="prediction-main">
+                    <div class="prediction-label">
+                        <span class="label-title">Diagnosis</span>
+                        <h3 id="prediction-text">Adenocarcinoma</h3>
+                    </div>
+                    <div class="prediction-icon">
+                        <i class="fa-solid fa-file-medical-alt"></i>
+                    </div>
+                </div>
+
+                <div class="probabilities-section">
+                    <h4>Detailed Analysis</h4>
+                    <div class="prob-list" id="prob-list">
+                        <!-- Probabilities injected here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>Developed with TensorFlow & Flask</p>
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
