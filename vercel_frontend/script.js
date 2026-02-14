@@ -1,4 +1,4 @@
-const API_URL = "https://YOUR-RENDER-APP-NAME.onrender.com"; // TODO: Replace with actual Render URL
+const API_URL = "https://lung-cancer-ai-w5n6.onrender.com";
 
 document.addEventListener('DOMContentLoaded', () => {
     const uploadArea = document.getElementById('upload-area');
