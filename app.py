@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 from predict import load_model_with_weights, predict_image, MODEL_PATH, IMAGE_SIZE
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Configure upload folder
 UPLOAD_FOLDER = 'uploads'
